@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMyListings"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/my_listings"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:background="@drawable/filter_button_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnAllCategories"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/all_categories"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:background="@drawable/filter_button_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnFree"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/free"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:background="@drawable/filter_button_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnDistance"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="@string/distance_10km"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:background="@drawable/filter_button_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</HorizontalScrollView>
+

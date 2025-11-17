@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Community Marketplace</string>
+    <string name="search_hint">Search For sale &amp; free</string>
+    <string name="my_listings">My listings</string>
+    <string name="all_categories">All categories</string>
+    <string name="free">Free</string>
+    <string name="distance_10km">10 km</string>
+    <string name="select_category">Select Category</string>
+    <string name="all_categories_option">All Categories</string>
+    <string name="filter_active">%d filter(s) active</string>
+    <string name="no_results">No listings found</string>
+    <string name="clear_filters">Clear Filters</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="for_sale">For Sale</string>
+    <string name="post">Post</string>
+    <string name="listing_details">Listing Details</string>
+    <string name="new_listing">New listing</string>
+    <string name="price_format">$%s</string>
+    <string name="free_label">FREE</string>
+    
+    <!-- New Listing Flow -->
+    <string name="add_photos">Add photos</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="back">Back</string>
+    <string name="photo_tip_1">Add at least one photo to help buyers see your item.</string>
+    <string name="photo_tip_2">You can add up to 10 photos. The first photo will be the cover image.</string>
+    <string name="photos_added">%d of 10 photos added</string>
+    <string name="title_hint">What are you selling?</string>
+    <string name="description_hint">Describe your item</string>
+    <string name="category">Category</string>
+    <string name="price">Price</string>
+    <string name="price_hint">0.00</string>
+    <string name="pickup_location">Pickup location</string>
+    <string name="location_placeholder">Add your location</string>
+    <string name="review_post">Review &amp; Post</string>
+    <string name="why_selling">Why are you selling or giving this away? (Optional)</string>
+    <string name="why_selling_hint">Share more details about the item or why you\'re listing it</string>
+    <string name="posted_by">Posted by</string>
+    <string name="listing_posted">Listing posted successfully!</string>
+    <string name="close">Close</string>
+    <string name="back_button">Back</string>
+    <string name="please_add_title">Please add a title</string>
+    <string name="please_add_category">Please select a category</string>
+    <string name="please_add_price">Please add a price or mark as free</string>
+    <string name="please_add_location">Please add a pickup location</string>
+    
+    <!-- Listing Details -->
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="seller_info">Seller</string>
+    <string name="description">Description</string>
+    <string name="message_placeholder">Hi, is this still available?</string>
+    <string name="send">Send</string>
+    <string name="share_listing">Share listing</string>
+    <string name="chat">Chat</string>
+    <string name="copy_link">Copy link</string>
+    <string name="email">Email</string>
+    <string name="facebook">Facebook</string>
+    <string name="more">More</string>
+    <string name="pickup_location_map">Pickup location</string>
+    <string name="distance_format">%s km away</string>
+    <string name="time_ago">%s ago</string>
+    <string name="link_copied">Link copied to clipboard</string>
+    
+    <string-array name="categories">
+        <item>Furniture</item>
+        <item>Electronics</item>
+        <item>Vehicles</item>
+        <item>Books</item>
+        <item>Sports</item>
+        <item>Kitchen</item>
+        <item>Garden</item>
+        <item>Home Decor</item>
+        <item>Other</item>
+    </string-array>
+</resources>
