@@ -18,7 +18,7 @@
     <string name="new_listing">New listing</string>
     <string name="price_format">$%s</string>
     <string name="free_label">FREE</string>
-    
+
     <!-- New Listing Flow -->
     <string name="add_photos">Add photos</string>
     <string name="next">Next</string>
@@ -45,7 +45,7 @@
     <string name="please_add_category">Please select a category</string>
     <string name="please_add_price">Please add a price or mark as free</string>
     <string name="please_add_location">Please add a pickup location</string>
-    
+
     <!-- Listing Details -->
     <string name="favorite">Favorite</string>
     <string name="share">Share</string>
@@ -63,7 +63,12 @@
     <string name="distance_format">%s km away</string>
     <string name="time_ago">%s ago</string>
     <string name="link_copied">Link copied to clipboard</string>
-    
+    <string name="search_local_hint">Search for local spots...</string>
+    <string name="filters_search">Filter</string>
+    <string name="food_btn">Food</string>
+    <string name="parks_btn">Parks\n</string>
+    <string name="events_btn">Events</string>
+
     <string-array name="categories">
         <item>Furniture</item>
         <item>Electronics</item>

@@ -14,59 +14,59 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnMyListings"
+            android:id="@+id/btnFilters"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/my_listings"
-            android:textSize="14sp"
-            android:textColor="@color/text_primary"
             android:background="@drawable/filter_button_background"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:textAllCaps="false" />
+            android:text="@string/filters_search"
+            android:textAllCaps="false"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
 
         <Button
-            android:id="@+id/btnAllCategories"
+            android:id="@+id/btnFood"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/all_categories"
-            android:textSize="14sp"
-            android:textColor="@color/text_primary"
             android:background="@drawable/filter_button_background"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:textAllCaps="false" />
+            android:text="@string/food_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
 
         <Button
-            android:id="@+id/btnFree"
+            android:id="@+id/btnPark"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/free"
-            android:textSize="14sp"
-            android:textColor="@color/text_primary"
             android:background="@drawable/filter_button_background"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:textAllCaps="false" />
+            android:text="@string/parks_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
 
         <Button
-            android:id="@+id/btnDistance"
+            android:id="@+id/btnEvents"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
-            android:text="@string/distance_10km"
-            android:textSize="14sp"
-            android:textColor="@color/text_primary"
             android:background="@drawable/filter_button_background"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:textAllCaps="false" />
+            android:text="@string/events_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
