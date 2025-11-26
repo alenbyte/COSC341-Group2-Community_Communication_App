@@ -72,10 +72,10 @@ public class MarketplaceActivity extends AppCompatActivity {
         searchEditText = findViewById(R.id.searchEditText);
         
         // Filter buttons
-        btnMyListings = findViewById(R.id.btnMyListings);
-        btnAllCategories = findViewById(R.id.btnAllCategories);
-        btnFree = findViewById(R.id.btnFree);
-        btnDistance = findViewById(R.id.btnDistance);
+        btnMyListings = findViewById(R.id.btnFilters);
+        btnAllCategories = findViewById(R.id.btnFood);
+        btnFree = findViewById(R.id.btnPark);
+        btnDistance = findViewById(R.id.btnEvents);
         
         // Bottom navigation
         navHome = findViewById(R.id.navHome);
@@ -146,7 +146,8 @@ public class MarketplaceActivity extends AppCompatActivity {
         });
 
         navSearch.setOnClickListener(v -> {
-            searchEditText.requestFocus();
+            Intent intent = new Intent(MarketplaceActivity.this, com.example.COSC341Task3.Task5.MainActivitySearch.class);
+            startActivity(intent);
         });
 
         navForSale.setOnClickListener(v -> {

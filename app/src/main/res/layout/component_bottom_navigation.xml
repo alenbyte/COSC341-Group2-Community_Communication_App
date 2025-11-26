@@ -24,27 +24,27 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
 
             <ImageView
+                android:id="@+id/iconHome"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:contentDescription="@string/home"
                 android:src="@drawable/ic_home"
+                android:contentDescription="@string/home"
                 app:tint="@color/text_secondary" />
 
             <TextView
+                android:id="@+id/labelHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:text="@string/home"
                 android:textColor="@color/text_secondary"
-                android:textSize="12sp" />
-
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
         </LinearLayout>
 
         <!-- Search Button -->
@@ -53,42 +53,42 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
 
             <ImageView
+                android:id="@+id/iconSearch"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:contentDescription="@string/search"
                 android:src="@drawable/ic_search"
+                android:contentDescription="@string/search"
                 app:tint="@color/text_secondary" />
 
             <TextView
+                android:id="@+id/labelSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:text="@string/search"
                 android:textColor="@color/text_secondary"
-                android:textSize="12sp" />
-
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
         </LinearLayout>
 
-        <!-- For Sale Button (Highlighted) -->
+        <!-- For Sale Button -->
         <LinearLayout
             android:id="@+id/navForSale"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
             android:gravity="center"
+            android:orientation="vertical"
             android:clickable="true"
-            android:focusable="true"
-            android:background="?android:attr/selectableItemBackground">
+            android:focusable="true">
 
             <ImageView
+                android:id="@+id/iconForSale"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_grid_view"
@@ -96,6 +96,7 @@
                 app:tint="@color/primary" />
 
             <TextView
+                android:id="@+id/labelForSale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/for_sale"
@@ -103,9 +104,7 @@
                 android:textColor="@color/primary"
                 android:textStyle="bold"
                 android:layout_marginTop="2dp" />
-
         </LinearLayout>
 
     </LinearLayout>
-
 </RelativeLayout>
