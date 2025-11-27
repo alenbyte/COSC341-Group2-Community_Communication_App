@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.COSC341Task3.Homepage;
 import com.example.COSC341Task3.R;
 import com.example.COSC341Task3.MarketplaceActivity;
 
@@ -41,8 +42,8 @@ public class MainActivitySearch extends AppCompatActivity {
 
         // Set click listeners
         navHome.setOnClickListener(v -> {
-            Toast.makeText(this, "Home clicked", Toast.LENGTH_SHORT).show();
-            highlightTab(navHome);
+            Intent intent = new Intent(MainActivitySearch.this, Homepage.class);
+            startActivity(intent);
         });
 
         navSearch.setOnClickListener(v -> {
