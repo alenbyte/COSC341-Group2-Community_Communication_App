@@ -1,0 +1,5 @@
+<!-- A solid background for the "on" state -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/primary" /> <!-- Use your app's primary color -->
+    <corners android:radius="18dp" />
+</shape>

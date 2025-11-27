@@ -8,30 +8,36 @@
     android:background="@color/background"
     tools:context=".Task5.MainActivitySearch">
 
+    <!-- Main Content -->
     <LinearLayout
         android:id="@+id/mainContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavContainer"
         android:orientation="vertical"
         android:fitsSystemWindows="true">
 
         <!-- Search Bar -->
         <include
-            android:id="@+id/searchBar"
-            layout="@layout/component_search_bar"
+            android:id="@+id/search_searchBar"
+            layout="@layout/search_searchbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <!-- Filter Bar -->
         <include
             android:id="@+id/filterBar"
-            layout="@layout/component_filter_bar"
+            layout="@layout/filter_bar_searchtab"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
-        <!-- Put your own UI content here -->
-
+        <!-- Map View -->
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/map_reader"
+            android:paddingBottom="?attr/actionBarSize" />
     </LinearLayout>
 
     <!-- Bottom Navigation -->
@@ -40,6 +46,5 @@
         layout="@layout/component_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
-
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
