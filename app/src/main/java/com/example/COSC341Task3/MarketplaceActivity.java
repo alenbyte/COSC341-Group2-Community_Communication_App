@@ -142,7 +142,8 @@ public class MarketplaceActivity extends AppCompatActivity {
 
         // Bottom navigation
         navHome.setOnClickListener(v -> {
-            Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MarketplaceActivity.this, Homepage.class);
+            startActivity(intent);
         });
 
         navSearch.setOnClickListener(v -> {

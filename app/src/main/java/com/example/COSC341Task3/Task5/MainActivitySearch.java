@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.COSC341Task3.Homepage;
 import com.example.COSC341Task3.R;
 import com.example.COSC341Task3.MarketplaceActivity;
 
@@ -159,6 +160,37 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
         googleMap.getUiSettings().setMapToolbarEnabled(false);
 
         setupMapMarkers();
+        // Initialize navigation views
+        navHome = findViewById(R.id.navHome);
+        navSearch = findViewById(R.id.navSearch);
+        navForSale = findViewById(R.id.navForSale);
+
+        iconHome = findViewById(R.id.iconHome);
+        iconSearch = findViewById(R.id.iconSearch);
+        iconForSale = findViewById(R.id.iconForSale);
+
+        labelHome = findViewById(R.id.labelHome);
+        labelSearch = findViewById(R.id.labelSearch);
+        labelForSale = findViewById(R.id.labelForSale);
+
+        // Highlight the current tab (Search)
+        highlightTab(navSearch);
+
+        // Set click listeners
+        navHome.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivitySearch.this, Homepage.class);
+            startActivity(intent);
+        });
+
+        navSearch.setOnClickListener(v -> {
+            // Already on Search, but you can re-highlight if needed
+            highlightTab(navSearch);
+        });
+
+        navForSale.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivitySearch.this, MarketplaceActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void setupMapMarkers() {
