@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,10 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Step4_new_claude">
+        <activity
+            android:name=".Task5.LocationDetailActivity"
+            android:exported="false"
+            android:label="Location Details"
+            android:parentActivityName=".Task5.MainActivitySearch" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyArzOZ0s0Vql0InpTilZgrN2u2dAgBH1sw"/>
+            android:value="AIzaSyArzOZ0s0Vql0InpTilZgrN2u2dAgBH1sw" />
 
         <activity
             android:name=".Homepage"
@@ -54,6 +61,7 @@
             android:name=".NewListingStep3Activity"
             android:exported="false"
             android:label="@string/review_post" />
+
     </application>
 
 </manifest>
