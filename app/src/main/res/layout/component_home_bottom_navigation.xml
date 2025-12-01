@@ -62,7 +62,7 @@
                 android:id="@+id/iconShop"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/shop_icon"
+                android:src="@drawable/market_icon"
                 android:contentDescription="@string/nav_shop"
                 app:tint="@color/text_secondary" />
 
