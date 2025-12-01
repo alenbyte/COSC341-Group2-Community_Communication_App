@@ -10,6 +10,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.COSC341Task3.Task2.Post;
+import com.example.COSC341Task3.Task2.PostAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Homepage extends AppCompatActivity {
 
@@ -25,7 +32,16 @@ public class Homepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        RecyclerView rv = findViewById(R.id.postsRecyclerView);
+        rv.setLayoutManager(new LinearLayoutManager(this));
 
+        List<Post> posts = new ArrayList<>();
+        posts.add(new Post("User", "This is a text-only post"));
+        posts.add(new Post("Layla", "Post with image!", R.drawable.ic_image));
+        posts.add(new Post("Alawi habib galby abu Hussein", "Another text-only post"));
+
+        PostAdapter adapter = new PostAdapter(posts);
+        rv.setAdapter(adapter);
         ConstraintLayout mainLayout = findViewById(R.id.main);
 
         // bottom nav items
