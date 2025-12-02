@@ -41,6 +41,7 @@ dependencies {
     implementation(libs.cardview)
     implementation(libs.coordinatorlayout)
     implementation(libs.core)
+    implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
