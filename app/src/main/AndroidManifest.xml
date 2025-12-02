@@ -12,8 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Step4_new_claude">
         <activity
-            android:name=".Homepage"
+            android:name="com.example.COSC341Task1.community_report_finish"
             android:exported="false" />
+        <activity
+            android:name="com.example.COSC341Task1.community_view"
+            android:exported="false" />
+        <activity
+            android:name="com.example.COSC341Task1.community_main"
+            android:exported="true" />
+        <activity
+            android:name="com.example.COSC341Task1.community_report"
+            android:exported="false" />
+        <activity
+            android:name="com.example.COSC341Task1.community_detail"
+            android:exported="false" />
+        <activity
+            android:name="com.example.COSC341Task1.Communities_discover"
+            android:exported="true"
+            android:label="Discover Communities" />
         <activity
             android:name=".Task5.MainActivitySearch"
             android:exported="false" />

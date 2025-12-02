@@ -68,6 +68,7 @@
     <string name="food_btn">Food</string>
     <string name="parks_btn">Parks\n</string>
     <string name="events_btn">Events</string>
+    <string name="btnCom">Discover new communities</string>
 
     <string-array name="categories">
         <item>Furniture</item>
