@@ -1,10 +1,13 @@
 package com.example.COSC341Task3.Task2;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.COSC341Task3.R;
+import com.example.COSC341Task3.task4.ReportUserPage;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,6 +43,16 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         } else {
             holder.postImage.setVisibility(View.GONE);
         }
+
+        //report icon go to user report page once click
+        holder.reportIcon.setOnClickListener(v ->{
+            Intent intent = new Intent(v.getContext(), ReportUserPage.class);
+            //to get username and post
+            intent.putExtra("username", post.getUserName());
+            intent.putExtra("postText", post.getText());
+
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
@@ -53,6 +66,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         TextView postText;
         ImageView postImage;
         ImageView bookmarkIcon;
+        ImageView reportIcon;
 
         PostViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +75,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             postText = itemView.findViewById(R.id.postText);
             postImage = itemView.findViewById(R.id.postImage);
             bookmarkIcon = itemView.findViewById(R.id.bookmarkIcon);
+            reportIcon = itemView.findViewById(R.id.reportIcon);
+
         }
     }
 }

@@ -88,19 +88,55 @@
         <item>Home Decor</item>
         <item>Other</item>
     </string-array>
-       <string name="list">List</string>
+    <string name="list">List</string>
     <string name="map_reader">Map showing nearby locations</string>
+
+    <!-- Report Options -->
+    <string-array name="report_options">
+        <item>Select</item>
+        <item>Mute</item>
+        <item>Warn</item>
+        <item>Remove</item>
+    </string-array>
+
+
+    <string-array name="report_options_user">
+        <item>Select</item>
+        <item>Spam or misleading</item>
+        <item>Harassment or bullying</item>
+        <item>Inappropriate content</item>
+        <item>Privacy violation</item>
+        <item>Other</item>
+    </string-array>
+    <!-- <string name="parks_btn">Parks</string> -->
+
+    <!-- <string name="filters_search">Filters</string> -->
+
+    <!-- <string name="all_categories">All Categories</string> -->
+
+    <!-- <string name="no_results">No results found.</string> -->
+
+
+    <!-- <string-array name="categories">
+           <item>Electronics</item>
+           <item>Furniture</item>
+           <item>Home &amp; Garden</item>
+           <item>Clothing &amp; Accessories</item>
+           <item>Books, Movies &amp; Music</item>
+           <item>Vehicles</item>
+           <item>Other</item>
+       </string-array> -->
 
     <!-- <string name="parks_btn">Parks</string> -->
 
-       <!-- <string name="filters_search">Filters</string> -->
+    <!-- <string name="filters_search">Filters</string> -->
 
-       <!-- <string name="all_categories">All Categories</string> -->
+    <!-- <string name="all_categories">All Categories</string> -->
 
-       <!-- <string name="no_results">No results found.</string> -->
+    <!-- <string name="no_results">No results found.</string> -->
 
 
-       <!-- <string-array name="categories">
+    <!-- <string-array name="categories">
            <item>Electronics</item>
            <item>Furniture</item>
            <item>Home &amp; Garden</item>
@@ -110,16 +146,16 @@
            <item>Other</item>
        </string-array> -->
 
-       <!-- <string name="parks_btn">Parks</string> -->
+    <!-- <string name="parks_btn">Parks</string> -->
 
-       <!-- <string name="filters_search">Filters</string> -->
+    <!-- <string name="filters_search">Filters</string> -->
 
-       <!-- <string name="all_categories">All Categories</string> -->
+    <!-- <string name="all_categories">All Categories</string> -->
 
-       <!-- <string name="no_results">No results found.</string> -->
+    <!-- <string name="no_results">No results found.</string> -->
 
 
-       <!-- <string-array name="categories">
+    <!-- <string-array name="categories">
            <item>Electronics</item>
            <item>Furniture</item>
            <item>Home &amp; Garden</item>
@@ -129,16 +165,16 @@
            <item>Other</item>
        </string-array> -->
 
-       <!-- <string name="parks_btn">Parks</string> -->
+    <!-- <string name="parks_btn">Parks</string> -->
 
-       <!-- <string name="filters_search">Filters</string> -->
+    <!-- <string name="filters_search">Filters</string> -->
 
-       <!-- <string name="all_categories">All Categories</string> -->
+    <!-- <string name="all_categories">All Categories</string> -->
 
-       <!-- <string name="no_results">No results found.</string> -->
+    <!-- <string name="no_results">No results found.</string> -->
 
 
-       <!-- <string-array name="categories">
+    <!-- <string-array name="categories">
            <item>Electronics</item>
            <item>Furniture</item>
            <item>Home &amp; Garden</item>
@@ -148,16 +184,16 @@
            <item>Other</item>
        </string-array> -->
 
-       <!-- <string name="parks_btn">Parks</string> -->
+    <!-- <string name="parks_btn">Parks</string> -->
 
-       <!-- <string name="filters_search">Filters</string> -->
+    <!-- <string name="filters_search">Filters</string> -->
 
-       <!-- <string name="all_categories">All Categories</string> -->
+    <!-- <string name="all_categories">All Categories</string> -->
 
-       <!-- <string name="no_results">No results found.</string> -->
+    <!-- <string name="no_results">No results found.</string> -->
 
 
-       <!-- <string-array name="categories">
+    <!-- <string-array name="categories">
            <item>Electronics</item>
            <item>Furniture</item>
            <item>Home &amp; Garden</item>
@@ -167,16 +203,16 @@
            <item>Other</item>
        </string-array> -->
 
-       <!-- <string name="parks_btn">Parks</string> -->
+    <!-- <string name="parks_btn">Parks</string> -->
 
-       <!-- <string name="filters_search">Filters</string> -->
+    <!-- <string name="filters_search">Filters</string> -->
 
-       <!-- <string name="all_categories">All Categories</string> -->
+    <!-- <string name="all_categories">All Categories</string> -->
 
-       <!-- <string name="no_results">No results found.</string> -->
+    <!-- <string name="no_results">No results found.</string> -->
 
 
-       <!-- <string-array name="categories">
+    <!-- <string-array name="categories">
            <item>Electronics</item>
            <item>Furniture</item>
            <item>Home &amp; Garden</item>
@@ -186,35 +222,16 @@
            <item>Other</item>
        </string-array> -->
 
-       <!-- <string name="parks_btn">Parks</string> -->
+    <!-- <string name="parks_btn">Parks</string> -->
 
-       <!-- <string name="filters_search">Filters</string> -->
+    <!-- <string name="filters_search">Filters</string> -->
 
-       <!-- <string name="all_categories">All Categories</string> -->
+    <!-- <string name="all_categories">All Categories</string> -->
 
-       <!-- <string name="no_results">No results found.</string> -->
-
-
-       <!-- <string-array name="categories">
-           <item>Electronics</item>
-           <item>Furniture</item>
-           <item>Home &amp; Garden</item>
-           <item>Clothing &amp; Accessories</item>
-           <item>Books, Movies &amp; Music</item>
-           <item>Vehicles</item>
-           <item>Other</item>
-       </string-array> -->
-
-       <!-- <string name="parks_btn">Parks</string> -->
-
-       <!-- <string name="filters_search">Filters</string> -->
-
-       <!-- <string name="all_categories">All Categories</string> -->
-
-       <!-- <string name="no_results">No results found.</string> -->
+    <!-- <string name="no_results">No results found.</string> -->
 
 
-       <!-- <string-array name="categories">
+    <!-- <string-array name="categories">
            <item>Electronics</item>
            <item>Furniture</item>
            <item>Home &amp; Garden</item>
