@@ -31,21 +31,25 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <!-- Task1: communities button-->
+
+    <!-- Task4: admin icon -->
+
     <ImageButton
         android:id="@+id/btnGoToCommunities"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="86dp"
+        android:layout_height="77dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Your communities"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_grid_view"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/postsRecyclerView"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@mipmap/ic_community_foreground"
+        app:layout_constraintBottom_toTopOf="@+id/postsRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.216" />
 
-    <!-- Task4: admin icon -->
+
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
@@ -54,6 +58,21 @@
         android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.768"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036"
         app:srcCompat="@drawable/outline_admin_panel_settings_24" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-32dp"
+        android:text="Communities"
+        android:textSize="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnGoToCommunities"
+        app:layout_constraintStart_toStartOf="@+id/btnGoToCommunities"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoToCommunities" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
