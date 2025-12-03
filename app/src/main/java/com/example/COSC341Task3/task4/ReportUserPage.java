@@ -58,6 +58,9 @@ public class ReportUserPage extends AppCompatActivity {
                 return;
             }
 
+            //why was the report made
+            String reason = spinner.getSelectedItem().toString();
+
             Toast.makeText(
                     ReportUserPage.this,
                     "Your report has been submitted.",
@@ -66,7 +69,12 @@ public class ReportUserPage extends AppCompatActivity {
 
             // Return to homepage
             Intent intent = new Intent(ReportUserPage.this, Homepage.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("username", username);
+            intent.putExtra("postText", postText);
+            intent.putExtra("reason", reason);
+
+
+            // intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
         });

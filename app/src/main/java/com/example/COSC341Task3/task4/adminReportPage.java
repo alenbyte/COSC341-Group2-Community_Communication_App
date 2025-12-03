@@ -37,6 +37,8 @@ public class adminReportPage extends AppCompatActivity {
 
         TextView tvUser = findViewById(R.id.textView7);
         TextView tvPost = findViewById(R.id.textView8);
+        TextView tvReason = findViewById(R.id.textViewReason);
+
 
         spinner = findViewById(R.id.spinner);
         doneButton = findViewById(R.id.button2);
@@ -47,7 +49,7 @@ public class adminReportPage extends AppCompatActivity {
         Intent fromUser = getIntent();
         String username = fromUser.getStringExtra("username");
         String postText = fromUser.getStringExtra("postText");
-        String reason   = fromUser.getStringExtra("reason"); // opcional
+        String reason = fromUser.getStringExtra("reason");
 
         if (username != null && !username.isEmpty()) {
             tvUser.setText("Username: " + username);
@@ -55,20 +57,27 @@ public class adminReportPage extends AppCompatActivity {
             tvUser.setText("Username: -");
         }
 
-        StringBuilder postBuilder = new StringBuilder();
-        postBuilder.append("Post:\n");
+    // StringBuilder postBuilder = new StringBuilder();
+    //    postBuilder.append("Post:\n");
+     if (postText != null && !postText.isEmpty()){
+         tvPost.setText("Post:\n" + postText);
+     } else {
+         tvPost.setText("Post: -");
+     }
 
-        if (postText != null && !postText.isEmpty()) {
-            postBuilder.append(postText);
-        } else {
-            postBuilder.append("-");
-        }
+     //   if (postText != null && !postText.isEmpty()) {
+       //     postBuilder.append(postText);
+       // } else {
+         //   postBuilder.append("-");
+        //}
 
         if (reason != null && !reason.isEmpty()) {
-            postBuilder.append("\n\nReason: ").append(reason);
+            tvReason.setText("Reason: " + reason);
+        } else {
+            tvReason.setText("Reason: -");
         }
 
-        tvPost.setText(postBuilder.toString());
+        //tvPost.setText(postBuilder.toString());
 
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override

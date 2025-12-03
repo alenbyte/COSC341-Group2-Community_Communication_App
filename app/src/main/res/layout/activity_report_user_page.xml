@@ -8,30 +8,27 @@
     android:layout_height="match_parent"
     tools:context=".task4.ReportUserPage">
 
-    <!-- Close Icon -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="55dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/outline_close_24" />
 
-    <!-- Title -->
     <TextView
         android:id="@+id/report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="Report"
+        android:layout_marginTop="55dp"
+        android:text="Report User"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- CARD: Username + Post -->
     <androidx.cardview.widget.CardView
         android:id="@+id/reportCard"
         android:layout_width="0dp"
