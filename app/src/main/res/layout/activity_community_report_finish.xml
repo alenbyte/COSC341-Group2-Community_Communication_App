@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    tools:context="com.example.COSC341Task1.community_report_finish">
+    tools:context=".COSC341Task1.community_report_finish">
 
     <TextView
         android:id="@+id/thankYouTitle"

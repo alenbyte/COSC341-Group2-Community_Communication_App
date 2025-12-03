@@ -1,4 +1,4 @@
-package com.example.COSC341Task1;
+package com.example.COSC341Task3.COSC341Task1;
 
 public class CommunityPost {
     private String title;

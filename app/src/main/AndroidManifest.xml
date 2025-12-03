@@ -19,17 +19,23 @@
             android:name=".Homepage"
             android:exported="false" />
         <activity
-            android:name="com.example.COSC341Task1.community_main"
+            android:name=".COSC341Task1.community_report_finish"
+            android:exported="false" />
+        <activity
+            android:name=".COSC341Task1.community_view"
+            android:exported="false" />
+        <activity
+            android:name=".COSC341Task1.community_main"
             android:exported="true" />
         <activity
-            android:name="com.example.COSC341Task1.community_report"
+            android:name=".COSC341Task1.community_report"
             android:exported="false" />
         <activity
-            android:name="com.example.COSC341Task1.community_detail"
+            android:name=".COSC341Task1.community_detail"
             android:exported="false" />
         <activity
-            android:name="com.example.COSC341Task1.Communities_discover"
-            android:exported="true"
+            android:name=".COSC341Task1.Communities_discover"
+            android:exported="false"
             android:label="Discover Communities" />
         <activity
             android:name=".Task5.MainActivitySearch"

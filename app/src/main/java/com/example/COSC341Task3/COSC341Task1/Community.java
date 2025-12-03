@@ -1,4 +1,4 @@
-package com.example.COSC341Task1;
+package com.example.COSC341Task3.COSC341Task1;
 
 import java.io.Serializable;
 

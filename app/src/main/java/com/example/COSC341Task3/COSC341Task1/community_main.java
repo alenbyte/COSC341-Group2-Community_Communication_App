@@ -1,4 +1,4 @@
-package com.example.COSC341Task1;
+package com.example.COSC341Task3.COSC341Task1;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +21,7 @@ public class community_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_main);
         ListView communitiesListView = findViewById(R.id.communitiesListView);
+        ImageButton btnBack = findViewById(R.id.btnClose3);
         SearchView searchView = findViewById(R.id.communitySearch);
         ArrayList<Community> communityList = new ArrayList<>();
 
@@ -70,10 +71,12 @@ public class community_main extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                // This is where the filtering happens
                 adapter.getFilter().filter(newText);
                 return false;
             }
+        });
+        btnBack.setOnClickListener(v -> {
+            finish();
         });
     }
     }
