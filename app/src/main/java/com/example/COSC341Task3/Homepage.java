@@ -23,6 +23,8 @@ import java.util.List;
 public class Homepage extends AppCompatActivity {
 
     private boolean isPostArmed = false;
+    private List<Post> posts;
+    private PostAdapter adapter;
 
     // keep references so we can reset from anywhere
     private LinearLayout navPost;
@@ -33,6 +35,9 @@ public class Homepage extends AppCompatActivity {
     private String lastReportedUser;
     private String lastReportedPost;
     private String lastReportedReason;
+
+    private static final int REQUEST_CREATE_POST = 1;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -51,13 +56,14 @@ public class Homepage extends AppCompatActivity {
         RecyclerView rv = findViewById(R.id.postsRecyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
-        List<Post> posts = new ArrayList<>();
+        posts = new ArrayList<>();
         posts.add(new Post("User", "This is a text-only post"));
         posts.add(new Post("Layla", "Post with image!", R.drawable.ic_image));
         posts.add(new Post("Alawi habib galby abu Hussein", "Another text-only post"));
 
-        PostAdapter adapter = new PostAdapter(posts);
+        adapter = new PostAdapter(posts);
         rv.setAdapter(adapter);
+
         ConstraintLayout mainLayout = findViewById(R.id.main);
 
         // bottom nav items
@@ -95,9 +101,9 @@ public class Homepage extends AppCompatActivity {
                 labelPost.setTextColor(white);
 
             } else {
-                // SECOND TAP: later -> open CreatePostActivity
-                // Intent intent = new Intent(this, CreatePostActivity.class);
-                // startActivity(intent);
+                // SECOND TAP: open create-post page
+                Intent intent = new Intent(Homepage.this, com.example.COSC341Task3.Task2.CreatePostActivity.class);
+                startActivityForResult(intent, REQUEST_CREATE_POST);
             }
         });
 
@@ -125,6 +131,24 @@ public class Homepage extends AppCompatActivity {
         mainLayout.setOnClickListener(v -> resetPostButtonState());
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CREATE_POST && resultCode == RESULT_OK && data != null) {
+            String userName = data.getStringExtra("userName");
+            String text = data.getStringExtra("text");
+
+            if (userName != null && text != null) {
+                Post newPost = new Post(userName, text);
+                posts.add(0, newPost);                  // add to TOP of list
+                adapter.notifyItemInserted(0);
+            }
+
+            // reset post button visuals
+            resetPostButtonState();
+        }
+    }
 
 
     private void resetPostButtonState() {
