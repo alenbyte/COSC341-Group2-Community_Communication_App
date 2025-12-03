@@ -80,6 +80,11 @@
             android:exported="false"
             android:label="Create Post" />
 
+        <activity
+            android:name=".Task2.PostDetailActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>

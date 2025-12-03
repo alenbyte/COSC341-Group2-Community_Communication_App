@@ -59,7 +59,7 @@ public class Homepage extends AppCompatActivity {
         posts = new ArrayList<>();
         posts.add(new Post("User", "This is a text-only post"));
         posts.add(new Post("Layla", "Post with image!", R.drawable.ic_image));
-        posts.add(new Post("Alawi habib galby abu Hussein", "Another text-only post"));
+        posts.add(new Post("Alawi abu Hussein", "Another text-only post"));
 
         adapter = new PostAdapter(posts);
         rv.setAdapter(adapter);
@@ -138,10 +138,19 @@ public class Homepage extends AppCompatActivity {
         if (requestCode == REQUEST_CREATE_POST && resultCode == RESULT_OK && data != null) {
             String userName = data.getStringExtra("userName");
             String text = data.getStringExtra("text");
+            boolean notificationsOn = data.getBooleanExtra("notificationsOn", true);
 
             if (userName != null && text != null) {
-                Post newPost = new Post(userName, text);
-                posts.add(0, newPost);                  // add to TOP of list
+                // this is a post created by the current user
+                Post newPost = new Post(
+                        userName,
+                        text,
+                        null,              // no image for now
+                        true,              // ownedByCurrentUser
+                        notificationsOn    // bell state from create screen
+                );
+
+                posts.add(0, newPost);      // add to TOP of list
                 adapter.notifyItemInserted(0);
             }
 
@@ -149,6 +158,8 @@ public class Homepage extends AppCompatActivity {
             resetPostButtonState();
         }
     }
+
+
 
 
     private void resetPostButtonState() {
