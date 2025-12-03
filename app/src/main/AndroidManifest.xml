@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +14,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyArzOZ0s0Vql0InpTilZgrN2u2dAgBH1sw"/>
+            android:value="AIzaSyArzOZ0s0Vql0InpTilZgrN2u2dAgBH1sw" />
 
         <activity
             android:name=".Homepage"
@@ -23,6 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".task4.adminReportPage"
+            android:exported="false" />
+
+        <activity
+            android:name=".task4.ReportUserPage"
+            android:exported="false" />
+
+        <activity
+            android:name=".task4.Done"
+            android:exported="false" />
 
         <activity
             android:name=".Task5.MainActivitySearch"
@@ -36,26 +49,32 @@
             android:name=".MarketplaceActivity"
             android:exported="false"
             android:label="Marketplace" />
+
         <activity
             android:name=".ListingDetailsActivity"
             android:exported="false"
             android:label="@string/listing_details" />
+
         <activity
             android:name=".NewListingActivity"
             android:exported="false"
             android:label="@string/new_listing" />
+
         <activity
             android:name=".NewListingStep1Activity"
             android:exported="false"
             android:label="@string/new_listing" />
+
         <activity
             android:name=".NewListingStep2Activity"
             android:exported="false"
             android:label="@string/new_listing" />
+
         <activity
             android:name=".NewListingStep3Activity"
             android:exported="false"
             android:label="@string/review_post" />
+
         <activity
             android:name=".Task2.CreatePostActivity"
             android:exported="false"
