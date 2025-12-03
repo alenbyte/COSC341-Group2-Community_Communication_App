@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.COSC341Task3.Task2.Post;
 import com.example.COSC341Task3.Task2.PostAdapter;
+import com.example.COSC341Task3.task4.adminReportPage;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,11 +29,25 @@ public class Homepage extends AppCompatActivity {
     private ImageView iconPost;
     private TextView labelPost;
 
+    //report from user
+    private String lastReportedUser;
+    private String lastReportedPost;
+    private String lastReportedReason;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
+        //to read user report
+        Intent fromReport = getIntent();
+        if (fromReport != null) {
+            lastReportedUser   = fromReport.getStringExtra("username");
+            lastReportedPost   = fromReport.getStringExtra("postText");
+            lastReportedReason = fromReport.getStringExtra("reason");
+        }
+
         RecyclerView rv = findViewById(R.id.postsRecyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
@@ -51,6 +67,20 @@ public class Homepage extends AppCompatActivity {
         navPost = findViewById(R.id.navPost);
         iconPost = findViewById(R.id.iconPost);
         labelPost = findViewById(R.id.labelPost);
+
+        //admin icon
+        ImageView adminIcon = findViewById(R.id.imageView5);
+        adminIcon.setOnClickListener(v -> {
+            Intent intent = new Intent(Homepage.this, com.example.COSC341Task3.task4.adminReportPage.class);
+
+            if (lastReportedUser != null) {
+                intent.putExtra("username", lastReportedUser);
+                intent.putExtra("postText", lastReportedPost);
+                intent.putExtra("reason", lastReportedReason);
+            }
+
+            startActivity(intent);
+        });
 
         // ----- POST BUTTON (same as before) -----
         navPost.setOnClickListener(v -> {
