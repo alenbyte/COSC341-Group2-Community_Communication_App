@@ -56,6 +56,11 @@
             android:name=".NewListingStep3Activity"
             android:exported="false"
             android:label="@string/review_post" />
+        <activity
+            android:name=".Task2.CreatePostActivity"
+            android:exported="false"
+            android:label="Create Post" />
+
     </application>
 
 </manifest>
