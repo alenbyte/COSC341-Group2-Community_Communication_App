@@ -76,6 +76,7 @@
     <string name="filters">Filters</string>
     <string name="grocery">Grocery</string>
     <string name="map">Map</string>
+    <string name="btnCom">Discover new communities</string>
 
     <string-array name="categories">
         <item>Furniture</item>

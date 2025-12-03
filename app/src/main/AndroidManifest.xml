@@ -26,6 +26,26 @@
         </activity>
 
         <activity
+            android:name=".COSC341Task1.community_report_finish"
+            android:exported="false" />
+        <activity
+            android:name=".COSC341Task1.community_view"
+            android:exported="false" />
+        <activity
+            android:name=".COSC341Task1.community_main"
+            android:exported="true" />
+        <activity
+            android:name=".COSC341Task1.community_report"
+            android:exported="false" />
+        <activity
+            android:name=".COSC341Task1.community_detail"
+            android:exported="false" />
+        <activity
+            android:name=".COSC341Task1.Communities_discover"
+            android:exported="false"
+            android:label="Discover Communities" />
+
+        <activity
             android:name=".task4.adminReportPage"
             android:exported="false" />
 
@@ -83,7 +103,6 @@
         <activity
             android:name=".Task2.PostDetailActivity"
             android:exported="false" />
-
 
     </application>
 

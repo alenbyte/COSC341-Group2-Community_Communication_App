@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,6 +13,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.COSC341Task3.COSC341Task1.community_main;
 import com.example.COSC341Task3.Task2.Post;
 import com.example.COSC341Task3.Task2.PostAdapter;
 import com.example.COSC341Task3.task4.adminReportPage;
@@ -65,7 +68,11 @@ public class Homepage extends AppCompatActivity {
         rv.setAdapter(adapter);
 
         ConstraintLayout mainLayout = findViewById(R.id.main);
-
+        ImageButton comDisc = findViewById(R.id.btnGoToCommunities);
+        comDisc.setOnClickListener(v -> {
+            Intent comIn = new Intent(Homepage.this, community_main.class);
+            startActivity(comIn);
+        });
         // bottom nav items
         LinearLayout navHome = findViewById(R.id.navHome);
         LinearLayout navShop = findViewById(R.id.navShop);
