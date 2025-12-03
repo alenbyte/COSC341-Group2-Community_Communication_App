@@ -20,6 +20,7 @@ public class CreatePostActivity extends AppCompatActivity {
     private EditText inputUserName;
     private EditText inputText;
     private Button btnPost;
+    private boolean isBellOn = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class CreatePostActivity extends AppCompatActivity {
         ImageView iconTag = findViewById(R.id.iconTag);
         ImageView tagMenu = findViewById(R.id.tagMenu);
         LinearLayout cardContent = findViewById(R.id.createPostCardContent);
+        ImageView iconBell = findViewById(R.id.iconBell);
 
         View.OnClickListener hideAllMenus = v -> {
             attachMenu.setVisibility(View.GONE);
@@ -60,7 +62,17 @@ public class CreatePostActivity extends AppCompatActivity {
                 moreMenu.setVisibility(View.GONE);
             }
         });
+        iconBell.setOnClickListener(v -> {
+            isBellOn = !isBellOn;
 
+            if (isBellOn) {
+                iconBell.setImageResource(R.drawable.bell_icon);      // normal bell
+                iconBell.setAlpha(1.0f);                              // fully visible
+            } else {
+                iconBell.setImageResource(R.drawable.bell_off_icon);  // muted bell (add this drawable)
+                iconBell.setAlpha(0.5f);                              // slightly faded (optional)
+            }
+        });
         iconMore.setOnClickListener(v -> {
             if (moreMenu.getVisibility() == View.VISIBLE) {
                 moreMenu.setVisibility(View.GONE);
@@ -115,7 +127,7 @@ public class CreatePostActivity extends AppCompatActivity {
             Intent data = new Intent();
             data.putExtra("userName", userName);
             data.putExtra("text", text);
-
+            data.putExtra("notificationsOn", isBellOn);
             setResult(RESULT_OK, data);
             finish();
         });
