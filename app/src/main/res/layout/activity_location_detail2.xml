@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".Task5.LocationDetailActivity">
+
+    <!-- ADD THIS IMAGEVIEW -->
+    <ImageView
+        android:id="@+id/detailLocationImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerInside"
+        android:background="#E0E0E0"
+        android:src="@drawable/ic_image_placeholder"
+        android:contentDescription="Location placeholder image" />
+
+    <TextView
+        android:id="@+id/detailLocationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="Location Name" />
+
+    <TextView
+        android:id="@+id/detailLocationDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        tools:text="This is a short description of the place." />
+
+    <TextView
+        android:id="@+id/detailLocationDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textStyle="italic"
+        tools:text="Calculating distance..." />
+
+    <Button
+        android:id="@+id/btnOpenMaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Open in Google Maps" />
+
+    <Button
+        android:id="@+id/btnOpenWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Visit Website"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

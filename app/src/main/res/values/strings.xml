@@ -19,11 +19,6 @@
     <string name="price_format">$%s</string>
     <string name="free_label">FREE</string>
 
-    <!-- Homepage -->
-    <string name="nav_shop">Shop</string>
-    <string name="nav_settings">Settings</string>
-    <string name="nav_post">Post</string>
-
     <!-- New Listing Flow -->
     <string name="add_photos">Add photos</string>
     <string name="next">Next</string>
@@ -76,7 +71,6 @@
     <string name="filters">Filters</string>
     <string name="grocery">Grocery</string>
     <string name="map">Map</string>
-    <string name="btnCom">Discover new communities</string>
 
     <string-array name="categories">
         <item>Furniture</item>
@@ -92,23 +86,6 @@
     <string name="list">List</string>
     <string name="map_reader">Map showing nearby locations</string>
 
-    <!-- Report Options -->
-    <string-array name="report_options">
-        <item>Select</item>
-        <item>Mute</item>
-        <item>Warn</item>
-        <item>Remove</item>
-    </string-array>
-
-
-    <string-array name="report_options_user">
-        <item>Select</item>
-        <item>Spam or misleading</item>
-        <item>Harassment or bullying</item>
-        <item>Inappropriate content</item>
-        <item>Privacy violation</item>
-        <item>Other</item>
-    </string-array>
     <!-- <string name="parks_btn">Parks</string> -->
 
     <!-- <string name="filters_search">Filters</string> -->
