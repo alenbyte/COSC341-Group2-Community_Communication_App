@@ -174,7 +174,7 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
         labelForSale = findViewById(R.id.labelForSale);
 
         // Highlight the current tab (Search)
-        highlightTab(navSearch);
+        highlightBottomNavTab(navSearch);
 
         // Set click listeners
         navHome.setOnClickListener(v -> {
@@ -184,7 +184,7 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
 
         navSearch.setOnClickListener(v -> {
             // Already on Search, but you can re-highlight if needed
-            highlightTab(navSearch);
+            highlightBottomNavTab(navSearch);
         });
 
         navForSale.setOnClickListener(v -> {

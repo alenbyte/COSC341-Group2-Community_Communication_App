@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/postCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <!-- Profile icon -->
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            app:srcCompat="@drawable/profile_icon" />
+
+        <!-- Username -->
+        <TextView
+            android:id="@+id/User"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/profileIcon"
+            android:layout_alignTop="@id/profileIcon"
+            android:layout_marginStart="4dp"
+            android:text="User"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <!-- Bookmark top-right -->
+        <ImageView
+            android:id="@+id/bookmarkIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/profileIcon"
+            android:layout_marginEnd="4dp"
+            app:srcCompat="@drawable/bookmark_icon" />
+
+        <!-- OWNER ACTIONS ROW (bell, delete, edit) -->
+        <LinearLayout
+            android:id="@+id/ownerActionsRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignTop="@id/profileIcon"
+            android:layout_toStartOf="@id/bookmarkIcon"
+            android:layout_marginEnd="4dp">
+
+            <ImageView
+                android:id="@+id/ownerBellIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/bell_icon"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ownerDeleteIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ownerEditIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/black_pencil_icon"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Post text -->
+        <TextView
+            android:id="@+id/postText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/User"
+            android:layout_toEndOf="@id/profileIcon"
+            android:layout_toStartOf="@id/bookmarkIcon"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="This is a post..."
+            android:textSize="14sp" />
+
+        <!-- Optional image post -->
+        <ImageView
+            android:id="@+id/postImage"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_below="@id/postText"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_image" />
+
+        <!-- Bottom actions row -->
+        <LinearLayout
+            android:id="@+id/postActionsRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/postImage"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/reportIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                app:srcCompat="@drawable/flag_icon" />
+
+            <ImageView
+                android:id="@+id/commentIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                app:srcCompat="@drawable/comment_icon" />
+
+            <ImageView
+                android:id="@+id/sendIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                app:srcCompat="@drawable/send_icon" />
+
+            <ImageView
+                android:id="@+id/likeIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/like_icon" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
