@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">   <!-- dimmed background -->
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/postDetailCard"
+        android:layout_width="364dp"
+        android:layout_height="370dp"
+        android:layout_margin="32dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.473">
+
+        <FrameLayout
+            android:layout_width="316dp"
+            android:layout_height="229dp"
+            android:layout_margin="10dp">
+
+
+            <!-- your existing post layout -->
+            <include layout="@layout/item_post" />
+
+            <!-- X button in top-right -->
+            <ImageView
+                android:id="@+id/iconCloseDetail"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="0dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_close" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="86dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="5dp"
+            app:srcCompat="@drawable/write_comment" />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
