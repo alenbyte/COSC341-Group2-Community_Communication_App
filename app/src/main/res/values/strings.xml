@@ -93,14 +93,16 @@
     <string name="nav_post">Post</string>
     <string name="btnCom">Communities</string>
     <string-array name="report_options">
-        <item>Spam</item>
-        <item>Inappropriate Content</item>
-        <item>Harassment</item>
-        <item>Other</item>
+        <item>Select</item>
+        <item>Mute</item>
+        <item>Warn</item>
+        <item>Remove</item>
     </string-array>
     <string-array name="report_options_user">
+        <item>Select</item>
         <item>Inappropriate Content</item>
         <item>Spam</item>
+        <item>Misleading</item>
         <item>Harassment</item>
         <item>Other</item>
     </string-array>
