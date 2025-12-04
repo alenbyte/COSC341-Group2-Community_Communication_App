@@ -22,6 +22,9 @@ public class Post {
     public Post(String userName, String text, Integer imageResId) {
         this(userName, text, imageResId, false, false, false, false);
     }
+    public void setText(String text) {
+        this.text = text;
+    }
 
     // full constructor (for your new posts from Homepage)
     public Post(String userName,
