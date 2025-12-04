@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.COSC341Task3.R;
@@ -72,7 +73,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         // --- LIKE ICON STATE ---
         if (post.isLiked()) {
-            // TODO: replace with your filled-like drawable name
             holder.likeIcon.setImageResource(R.drawable.ic_like_filled);
         } else {
             holder.likeIcon.setImageResource(R.drawable.like_icon);
@@ -80,7 +80,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         // --- BOOKMARK ICON STATE ---
         if (post.isSaved()) {
-            // TODO: replace with your filled-bookmark drawable name
+
             holder.bookmarkIcon.setImageResource(R.drawable.ic_bookmark_filled);
         } else {
             holder.bookmarkIcon.setImageResource(R.drawable.bookmark_icon);
@@ -119,6 +119,32 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                     .setPositiveButton("Delete", (dialog, which) -> {
                         posts.remove(pos);
                         notifyItemRemoved(pos);
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .show();
+        });
+        // EDIT (pencil) icon for owned posts
+        holder.ownerEditIcon.setOnClickListener(v -> {
+            int pos = holder.getAdapterPosition();
+            if (pos == RecyclerView.NO_POSITION) return;
+
+            Post p = posts.get(pos);
+
+            // create an EditText pre-filled with current text
+            EditText input = new EditText(v.getContext());
+            input.setText(p.getText());
+            // put cursor at end
+            input.setSelection(input.getText().length());
+
+            new AlertDialog.Builder(v.getContext())
+                    .setTitle("Edit post")
+                    .setView(input)
+                    .setPositiveButton("Save", (dialog, which) -> {
+                        String newText = input.getText().toString().trim();
+                        if (!newText.isEmpty()) {
+                            p.setText(newText);
+                            notifyItemChanged(pos);
+                        }
                     })
                     .setNegativeButton("Cancel", null)
                     .show();
