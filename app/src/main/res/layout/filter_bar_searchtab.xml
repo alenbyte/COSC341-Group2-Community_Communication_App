@@ -17,18 +17,6 @@
         android:layout_marginBottom="8dp">
 
         <!-- CORRECTED ID from btnNewFilter to btnFilters -->
-        <Button
-            android:id="@+id/btnFilters"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/button_primary"
-            android:minWidth="80dp"
-            android:text="@string/filters"
-            android:textAllCaps="false"
-            android:textColor="@color/text_primary"
-            android:textSize="14sp" />
 
         <!-- Spacer -->
         <View

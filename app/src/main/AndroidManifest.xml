@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,6 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Step4_new_claude">
+        <activity
+            android:name=".Task5.LocationDetailActivity"
+            android:exported="false"
+            android:label="Location Details"
+            android:parentActivityName=".Task5.MainActivitySearch" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -18,91 +24,43 @@
 
         <activity
             android:name=".Homepage"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".COSC341Task1.community_report_finish"
             android:exported="false" />
-        <activity
-            android:name=".COSC341Task1.community_view"
-            android:exported="false" />
-        <activity
-            android:name=".COSC341Task1.community_main"
-            android:exported="true" />
-        <activity
-            android:name=".COSC341Task1.community_report"
-            android:exported="false" />
-        <activity
-            android:name=".COSC341Task1.community_detail"
-            android:exported="false" />
-        <activity
-            android:name=".COSC341Task1.Communities_discover"
-            android:exported="false"
-            android:label="Discover Communities" />
-
-        <activity
-            android:name=".task4.adminReportPage"
-            android:exported="false" />
-
-        <activity
-            android:name=".task4.ReportUserPage"
-            android:exported="false" />
-
-        <activity
-            android:name=".task4.Done"
-            android:exported="false" />
-
         <activity
             android:name=".Task5.MainActivitySearch"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MarketplaceActivity"
             android:exported="false"
             android:label="Marketplace" />
-
         <activity
             android:name=".ListingDetailsActivity"
             android:exported="false"
             android:label="@string/listing_details" />
-
         <activity
             android:name=".NewListingActivity"
             android:exported="false"
             android:label="@string/new_listing" />
-
         <activity
             android:name=".NewListingStep1Activity"
             android:exported="false"
             android:label="@string/new_listing" />
-
         <activity
             android:name=".NewListingStep2Activity"
             android:exported="false"
             android:label="@string/new_listing" />
-
         <activity
             android:name=".NewListingStep3Activity"
             android:exported="false"
             android:label="@string/review_post" />
-
-        <activity
-            android:name=".Task2.CreatePostActivity"
-            android:exported="false"
-            android:label="Create Post" />
-
-        <activity
-            android:name=".Task2.PostDetailActivity"
-            android:exported="false" />
 
     </application>
 
