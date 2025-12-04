@@ -31,7 +31,6 @@
             android:layout_height="wrap_content"/>
 
         <!-- Map View -->
-        <!-- Map View -->
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
             android:layout_width="match_parent"
@@ -52,7 +51,7 @@
     <!-- Bottom Navigation -->
     <include
         android:id="@+id/bottomNavContainer"
-        layout="@layout/component_bottom_navigation"
+        layout="@layout/component_home_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"/>

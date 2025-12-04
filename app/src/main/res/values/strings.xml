@@ -85,6 +85,25 @@
     </string-array>
     <string name="list">List</string>
     <string name="map_reader">Map showing nearby locations</string>
+    <!-- ... your other strings are here ... -->
+
+    <!-- ADD THESE MISSING STRINGS -->
+    <string name="nav_shop">Shop</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_post">Post</string>
+    <string name="btnCom">Communities</string>
+    <string-array name="report_options">
+        <item>Spam</item>
+        <item>Inappropriate Content</item>
+        <item>Harassment</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="report_options_user">
+        <item>Inappropriate Content</item>
+        <item>Spam</item>
+        <item>Harassment</item>
+        <item>Other</item>
+    </string-array>
 
     <!-- <string name="parks_btn">Parks</string> -->
 

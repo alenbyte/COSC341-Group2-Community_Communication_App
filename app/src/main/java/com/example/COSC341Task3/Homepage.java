@@ -2,8 +2,7 @@ package com.example.COSC341Task3;
 
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
-import android.content.Intent;
-import android.os.Bundle;
+import android.content.Intent;import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.COSC341Task3.COSC341Task1.community_main;
 import com.example.COSC341Task3.Task2.Post;
 import com.example.COSC341Task3.Task2.PostAdapter;
+// NEW: Import the MainActivitySearch class
+import com.example.COSC341Task3.Task5.MainActivitySearch;
 import com.example.COSC341Task3.task4.adminReportPage;
 
 
@@ -76,6 +77,8 @@ public class Homepage extends AppCompatActivity {
         // bottom nav items
         LinearLayout navHome = findViewById(R.id.navHome);
         LinearLayout navShop = findViewById(R.id.navShop);
+        // NEW: Find the new navSearch button by its ID
+        LinearLayout navSearch = findViewById(R.id.navSearch);
         LinearLayout navSettings = findViewById(R.id.navSettings);
         navPost = findViewById(R.id.navPost);
         iconPost = findViewById(R.id.iconPost);
@@ -127,6 +130,16 @@ public class Homepage extends AppCompatActivity {
             Intent intent = new Intent(Homepage.this, MarketplaceActivity.class);
             startActivity(intent);
         });
+
+        // NEW: Add a click listener for the search button
+        // ----- SEARCH BUTTON -----
+        if (navSearch != null) {
+            navSearch.setOnClickListener(v -> {
+                resetPostButtonState();
+                Intent intent = new Intent(Homepage.this, MainActivitySearch.class);
+                startActivity(intent);
+            });
+        }
 
         // ----- SETTINGS BUTTON -----
         navSettings.setOnClickListener(v -> {

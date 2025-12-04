@@ -1,11 +1,12 @@
 package com.example.COSC341Task3.Task5;
 
-import android.Manifest;import android.content.Intent;
+import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button; // <-- Import Button
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -46,25 +47,23 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
 
     // --- UI VIEW VARIABLES ---
     private SearchView searchView;
-    private LinearLayout navHome, navSearch, navForSale;
-    private ImageView iconHome, iconSearch, iconForSale;
-    private TextView labelHome, labelSearch, labelForSale;
+    private LinearLayout navHome, navShop, navSearch, navSettings, navPost;
+    private ImageView iconHome, iconShop, iconSearch, iconSettings, iconPost;
+    private TextView labelHome, labelShop, labelSearch, labelSettings, labelPost;
     private TextView btnMap, btnList;
     private MapView mapView;
     private RecyclerView listView;
-    // Filter Buttons
     private Button btnFood, btnPark, btnEvents, btnGrocery;
     private List<Button> filterButtons;
-
 
     // --- DATA & LOGIC VARIABLES ---
     private GoogleMap googleMap;
     private LocationAdapter locationAdapter;
-    private final List<Location> fullLocationList = new ArrayList<>(); // Master list
-    private final List<Location> filteredLocationList = new ArrayList<>(); // List for the adapter
+    private final List<Location> fullLocationList = new ArrayList<>();
+    private final List<Location> filteredLocationList = new ArrayList<>();
     private FusedLocationProviderClient fusedLocationClient;
-    private final Map<String, Location> markerMap = new HashMap<>(); // To link markers to locations
-    private String currentCategoryFilter = "All"; // To track the selected filter, "All" is default
+    private final Map<String, Location> markerMap = new HashMap<>();
+    private String currentCategoryFilter = "All";
 
     private static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 2;
@@ -137,8 +136,6 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
         if (filterBarLayout != null) {
             btnMap = filterBarLayout.findViewById(R.id.btnMap);
             btnList = filterBarLayout.findViewById(R.id.btnList);
-
-            // Find the filter buttons from the correct layout
             btnFood = filterBarLayout.findViewById(R.id.btnFood);
             btnPark = filterBarLayout.findViewById(R.id.btnPark);
             btnEvents = filterBarLayout.findViewById(R.id.btnEvents);
@@ -148,14 +145,27 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
 
         if (bottomNavLayout != null) {
             navHome = bottomNavLayout.findViewById(R.id.navHome);
+            navShop = bottomNavLayout.findViewById(R.id.navShop);
             navSearch = bottomNavLayout.findViewById(R.id.navSearch);
-            navForSale = bottomNavLayout.findViewById(R.id.navForSale);
+            navSettings = bottomNavLayout.findViewById(R.id.navSettings);
+            navPost = bottomNavLayout.findViewById(R.id.navPost);
+
             iconHome = bottomNavLayout.findViewById(R.id.iconHome);
+            iconShop = bottomNavLayout.findViewById(R.id.iconShop);
             iconSearch = bottomNavLayout.findViewById(R.id.iconSearch);
-            iconForSale = bottomNavLayout.findViewById(R.id.iconForSale);
+            iconSettings = bottomNavLayout.findViewById(R.id.iconSettings);
+            iconPost = bottomNavLayout.findViewById(R.id.iconPost);
+
             labelHome = bottomNavLayout.findViewById(R.id.labelHome);
+            labelShop = bottomNavLayout.findViewById(R.id.labelShop);
             labelSearch = bottomNavLayout.findViewById(R.id.labelSearch);
-            labelForSale = bottomNavLayout.findViewById(R.id.labelForSale);
+            labelSettings = bottomNavLayout.findViewById(R.id.labelSettings);
+            labelPost = bottomNavLayout.findViewById(R.id.labelPost);
+
+            // Hide the "Post" button on this activity
+            if (navPost != null) {
+                navPost.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -181,10 +191,8 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
             String clickedCategory = clickedButton.getText().toString();
 
             if (currentCategoryFilter.equalsIgnoreCase(clickedCategory)) {
-                // If the currently active filter is clicked again, deactivate it
                 currentCategoryFilter = "All";
             } else {
-                // Otherwise, activate the new filter
                 currentCategoryFilter = clickedCategory;
             }
             updateFilterButtonsUI();
@@ -198,25 +206,35 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
         }
 
         if (btnMap != null) {
-            btnMap.setOnClickListener(v -> {
-                updateToggleState(false);
-                Toast.makeText(this, "Switched to Map View", Toast.LENGTH_SHORT).show();
-            });
+            btnMap.setOnClickListener(v -> updateToggleState(false));
         }
         if (btnList != null) {
-            btnList.setOnClickListener(v -> {
-                updateToggleState(true);
-                Toast.makeText(this, "Switched to List View", Toast.LENGTH_SHORT).show();
-            });
+            btnList.setOnClickListener(v -> updateToggleState(true));
         }
+
         if (navHome != null) {
             navHome.setOnClickListener(v -> startActivity(new Intent(MainActivitySearch.this, Homepage.class)));
         }
-        if (navSearch != null) {
-            navSearch.setOnClickListener(v -> highlightBottomNavTab(navSearch));
+        if (navShop != null) {
+            navShop.setOnClickListener(v -> startActivity(new Intent(MainActivitySearch.this, MarketplaceActivity.class)));
         }
-        if (navForSale != null) {
-            navForSale.setOnClickListener(v -> startActivity(new Intent(MainActivitySearch.this, MarketplaceActivity.class)));
+        if (navSearch != null) {
+            navSearch.setOnClickListener(v -> highlightBottomNavTab(navSearch)); // Already on search
+        }
+        // ADDED: Click listeners for Settings and Post
+        if (navSettings != null) {
+            navSettings.setOnClickListener(v -> {
+                // TODO: Replace with your SettingsActivity.class
+                // Example: startActivity(new Intent(MainActivitySearch.this, SettingsActivity.class));
+                Toast.makeText(MainActivitySearch.this, "Settings clicked", Toast.LENGTH_SHORT).show();
+            });
+        }
+        if (navPost != null) {
+            navPost.setOnClickListener(v -> {
+                // TODO: Replace with your CreatePostActivity.class
+                // Example: startActivity(new Intent(MainActivitySearch.this, CreatePostActivity.class));
+                Toast.makeText(MainActivitySearch.this, "Post clicked", Toast.LENGTH_SHORT).show();
+            });
         }
     }
 
@@ -247,12 +265,10 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
         for (Button button : filterButtons) {
             if (button != null) {
                 if (button.getText().toString().equalsIgnoreCase(currentCategoryFilter)) {
-                    // This is the active button
                     button.setBackgroundResource(R.drawable.filter_button_background_active);
                     button.setTextColor(ContextCompat.getColor(this, android.R.color.white));
                     button.setTypeface(null, Typeface.BOLD);
                 } else {
-                    // This is an inactive button
                     button.setBackgroundResource(R.drawable.filter_button_background);
                     button.setTextColor(ContextCompat.getColor(this, R.color.text_primary));
                     button.setTypeface(null, Typeface.NORMAL);
@@ -285,7 +301,6 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
 
         locationTask.addOnSuccessListener(this, deviceLocation -> {
             if (deviceLocation != null) {
-                Toast.makeText(this, "Accurate location found!", Toast.LENGTH_SHORT).show();
                 for (Location loc : fullLocationList) {
                     float[] results = new float[1];
                     android.location.Location.distanceBetween(
@@ -297,39 +312,22 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
                 if (locationAdapter != null) {
                     locationAdapter.notifyDataSetChanged();
                 }
-            } else {
-                Toast.makeText(this, "Could not get current location to calculate distances.", Toast.LENGTH_LONG).show();
             }
-        });
-
-        locationTask.addOnFailureListener(this, e -> {
-            Toast.makeText(this, "Failed to get location: " + e.getMessage(), Toast.LENGTH_LONG).show();
         });
     }
 
     private void populateLocationData() {
         fullLocationList.clear();
-
-        // --- ACCURATE DOWNTOWN KELOWNA LOCATIONS ---
-
-        // Food & Drink
         fullLocationList.add(new Location("BNA Brewing Co. & Eatery", "Brewpub with bowling", "Food", 49.8869, -119.4953, "https://www.bnabrewing.com/"));
         fullLocationList.add(new Location("RauDZ Regional Table", "Upscale farm-to-table dining", "Food", 49.8854, -119.4969, "https://www.raudz.com/"));
         fullLocationList.add(new Location("The Bohemian Cafe", "Popular spot for breakfast & brunch", "Food", 49.8845, -119.4954, "https://www.bohemiancater.com/"));
-
-        // Groceries
         fullLocationList.add(new Location("Safeway Downtown", "Full-service grocery store", "Grocery", 49.8839, -119.4894));
-
-        // Parks & Recreation
         fullLocationList.add(new Location("Waterfront Park", "Downtown park by the lake with walking paths", "Park", 49.8913, -119.4984));
         fullLocationList.add(new Location("Stuart Park", "Outdoor plaza with public art and ice skating in winter", "Park", 49.8895, -119.4988));
         fullLocationList.add(new Location("City Park", "Large park with beach, sports fields, and waterpark", "Park", 49.8821, -119.5005));
-
-        // Events
         fullLocationList.add(new Location("Prospera Place", "Arena for concerts and hockey games", "Event", 49.8925, -119.4950, "https://www.prosperaplace.com/"));
         fullLocationList.add(new Location("Kelowna Community Theatre", "Live performances and shows", "Event", 49.8893, -119.4939, "https://theatre.kelowna.ca/"));
     }
-
 
     private void setupMapMarkers() {
         if (googleMap == null) return;
@@ -385,26 +383,39 @@ public class MainActivitySearch extends AppCompatActivity implements OnMapReadyC
     }
 
     private void highlightBottomNavTab(LinearLayout activeTab) {
-        if (navHome == null) return;
-        iconHome.setColorFilter(getColor(R.color.text_secondary));
-        labelHome.setTextColor(getColor(R.color.text_secondary));
-        iconSearch.setColorFilter(getColor(R.color.text_secondary));
-        labelSearch.setTextColor(getColor(R.color.text_secondary));
-        iconForSale.setColorFilter(getColor(R.color.text_secondary));
-        labelForSale.setTextColor(getColor(R.color.text_secondary));
+        List<ImageView> allIcons = Arrays.asList(iconHome, iconShop, iconSearch, iconSettings, iconPost);
+        List<TextView> allLabels = Arrays.asList(labelHome, labelShop, labelSearch, labelSettings, labelPost);
 
-        if (activeTab.getId() == R.id.navHome) {
-            iconHome.setColorFilter(getColor(R.color.primary));
-            labelHome.setTextColor(getColor(R.color.primary));
-        } else if (activeTab.getId() == R.id.navSearch) {
-            iconSearch.setColorFilter(getColor(R.color.primary));
-            labelSearch.setTextColor(getColor(R.color.primary));
-        } else if (activeTab.getId() == R.id.navForSale) {
-            iconForSale.setColorFilter(getColor(R.color.primary));
-            labelForSale.setTextColor(getColor(R.color.primary));
+        for (ImageView icon : allIcons) {
+            if (icon != null) icon.setColorFilter(ContextCompat.getColor(this, R.color.text_secondary));
+        }
+        for (TextView label : allLabels) {
+            if (label != null) label.setTextColor(ContextCompat.getColor(this, R.color.text_secondary));
+        }
+
+        if (activeTab != null) {
+            int activeId = activeTab.getId();
+            if (activeId == R.id.navHome) {
+                if (iconHome != null) iconHome.setColorFilter(ContextCompat.getColor(this, R.color.primary));
+                if (labelHome != null) labelHome.setTextColor(ContextCompat.getColor(this, R.color.primary));
+            } else if (activeId == R.id.navShop) {
+                if (iconShop != null) iconShop.setColorFilter(ContextCompat.getColor(this, R.color.primary));
+                if (labelShop != null) labelShop.setTextColor(ContextCompat.getColor(this, R.color.primary));
+            } else if (activeId == R.id.navSearch) {
+                if (iconSearch != null) iconSearch.setColorFilter(ContextCompat.getColor(this, R.color.primary));
+                if (labelSearch != null) labelSearch.setTextColor(ContextCompat.getColor(this, R.color.primary));
+            } else if (activeId == R.id.navSettings) {
+                if (iconSettings != null) iconSettings.setColorFilter(ContextCompat.getColor(this, R.color.primary));
+                if (labelSettings != null) labelSettings.setTextColor(ContextCompat.getColor(this, R.color.primary));
+            } else if (activeId == R.id.navPost) {
+                if (iconPost != null) iconPost.setColorFilter(ContextCompat.getColor(this, R.color.primary));
+                if (labelPost != null) labelPost.setTextColor(ContextCompat.getColor(this, R.color.primary));
+            }
         }
     }
 
+
+    // --- MapView Lifecycle Methods ---
     @Override
     public void onResume() {
         super.onResume();

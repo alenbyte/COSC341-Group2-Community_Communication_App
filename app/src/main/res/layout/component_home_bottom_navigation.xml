@@ -76,6 +76,35 @@
                 android:layout_marginTop="2dp" />
         </LinearLayout>
 
+        <!-- Search Button (New) -->
+        <LinearLayout
+            android:id="@+id/navSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/iconSearch"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_search"
+                android:contentDescription="@string/search"
+                app:tint="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/labelSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
         <!-- Settings Button -->
         <LinearLayout
             android:id="@+id/navSettings"
