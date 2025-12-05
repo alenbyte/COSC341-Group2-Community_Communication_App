@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import androidx.appcompat.widget.TooltipCompat;
+
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
@@ -180,6 +182,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             p.setSaved(!p.isSaved());
             notifyItemChanged(pos);
         });
+        // Tooltips for icons (shows on long-press / hover)
+        TooltipCompat.setTooltipText(holder.likeIcon, "Like");
+        TooltipCompat.setTooltipText(holder.bookmarkIcon, "Save");
+        TooltipCompat.setTooltipText(holder.reportIcon, "Report");
+        TooltipCompat.setTooltipText(holder.ownerBellIcon, "Notifications");
+        TooltipCompat.setTooltipText(holder.ownerDeleteIcon, "Delete");
+        TooltipCompat.setTooltipText(holder.ownerEditIcon, "Edit");
+
     }
 
 
